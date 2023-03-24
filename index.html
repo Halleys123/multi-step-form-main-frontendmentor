@@ -151,6 +151,7 @@
                 <div class="pageTwoDetails">
                   <p class="pageTwoButtonTextMain">Arcade</p>
                   <p class="pageTwoButtonPrice">$9/mo</p>
+                  <p class="yearlyMessage hidden">3 months free</p>
                 </div>
               </button>
               <button class="pageTwoBtn pageTwoBtn2">
@@ -158,6 +159,7 @@
                 <div class="pageTwoDetails">
                   <p class="pageTwoButtonTextMain">Advanced</p>
                   <p class="pageTwoButtonPrice">$12/mo</p>
+                  <p class="yearlyMessage hidden">3 months free</p>
                 </div>
               </button>
               <button class="pageTwoBtn pageTwoBtn3">
@@ -165,14 +167,20 @@
                 <div class="pageTwoDetails">
                   <p class="pageTwoButtonTextMain">Pro</p>
                   <p class="pageTwoButtonPrice">$15/mo</p>
+                  <p class="yearlyMessage hidden">3 months free</p>
                 </div>
               </button>
             </div>
             <div class="plan">
-              <span class="time currentlySelectedPlan">Monthly</span>
-              <input type="checkbox" id="input" />
+              <span class="time monthly currentlySelectedPlan">Monthly</span>
+              <!-- <input type="checkbox" id="input" />
               <label for="input" id="label"></label>
-              <span class="time"> Yearly</span>
+               -->
+              <div class="toggleSwitch">
+                <input type="checkbox" class="checkbox" />
+                <div class="circle"></div>
+              </div>
+              <span class="time yearly"> Yearly</span>
             </div>
           </div>
 
@@ -254,7 +262,7 @@
 
         <!-- Step 4 start -->
         <div class="divider hide" id="4">
-          <div class="thirdStep loginSteps">
+          <div class="fourthStep loginSteps">
             <header>Finishing up</header>
             <p class="detail">
               Double check everything looks OK before confirming

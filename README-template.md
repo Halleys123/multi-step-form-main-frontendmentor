@@ -69,12 +69,12 @@ Some of the few things I learnt and revised are:
 - Javascript Validation - It includes validation of emails. I learnt how to validate emails using regular expressions.
 - Javascript DOM Manipulation - I used DOM to make the form dynamic. I used DOM to change the content of the form.
 - Javascript Event Listeners - I used event listeners to make the form dynamic. I used event listeners to change the content of the form.
+- Using multiple classes for special selection of elements - I used multiple classes to select the elements that I wanted to change.
+- Using the `:checked` pseudo-class - I used the `:checked` pseudo-class to select the checked radio buttons.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I would like to change the formatting of javascript code and make it more readable. I would also like to make the code more efficient and reduce the number of lines of code.
 
 ### Useful resources
 

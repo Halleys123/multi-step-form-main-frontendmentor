@@ -216,14 +216,15 @@ input:invalid {
   height: 4rem;
   margin-top: 1rem;
   width: 100%;
-  background-color: hsl(228, 100%, 95%);
+  background-color: hsl(228, 100%, 98%);
+  border-radius: 1.2rem;
   display: flex;
   gap: 1.2rem;
   justify-content: center;
   align-items: center;
   color: hsl(231, 11%, 63%);
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 .currentlySelectedPlan {
   color: hsl(213, 96%, 18%);
@@ -290,7 +291,7 @@ input:invalid {
 }
 .divider {
   display: flex;
-  height: 90%;
+  min-height: 90%;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -303,14 +304,62 @@ input:invalid {
 .hide {
   display: none;
 }
-
+.hidden {
+  max-height: 0;
+  overflow: hidden;
+  transition: all;
+  transition-duration: 0.5s;
+}
+.hiddenNot {
+  max-height: 1.2rem;
+}
+.yearlyMessage {
+  color: hsl(213, 96%, 38%);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
 /* ------------------------------------------- */
 /* ------------------------------------------- */
 /* Step Number 3*/
 /* ------------------------------------------- */
 /* ------------------------------------------- */
+.toggleSwitch {
+  position: relative;
+  display: flex;
+  width: 3.6rem;
+  background-color: hsl(213, 96%, 18%);
+  height: 2rem;
+  border-radius: 1.6rem;
+  align-items: center;
+  justify-content: center;
+}
+.circle {
+  position: absolute;
+  right: 90%;
+  transform: translateX(90%);
+  height: 1.6rem;
+  width: 1.6rem;
+  background-color: white;
+  border-radius: 1.6rem;
+  transition: all;
+  transition-duration: 0.5s;
+}
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 1.6rem;
+  width: 3.2rem;
+  border-radius: 1.2rem;
+  z-index: 1;
+}
+/* --------------------------------------------- */
 .thirdStep {
   width: 90%;
+}
+.pageTwoBtn.invalid {
+  border: 1px solid hsl(354, 84%, 57%);
+  background-color: hsl(354, 84%, 99%);
 }
 .firstElementThirdPage {
   width: 100%;
@@ -503,7 +552,10 @@ input:invalid {
   color: hsl(231, 11%, 63%);
   text-align: center;
 }
-
+.divider.thank {
+  flex-direction: row;
+  justify-content: center;
+}
 /* media querries */
 
 @media (max-width: 1000px) {
@@ -545,7 +597,9 @@ input:invalid {
     border-radius: 1.2rem;
     background-color: white;
     padding: 0;
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     gap: 2.4rem;
     justify-content: space-evenly;
     width: 80%;
@@ -614,4 +668,10 @@ input:invalid {
   } */
 }
 @media (max-width: 375px) {
+  main {
+    width: 100%;
+  }
+  .divider {
+    width: 90%;
+  }
 }

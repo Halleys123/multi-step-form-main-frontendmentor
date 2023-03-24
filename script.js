@@ -1,14 +1,16 @@
 const btn1 = document.querySelector(".pageTwoBtn1");
 const btn2 = document.querySelector(".pageTwoBtn2");
 const btn3 = document.querySelector(".pageTwoBtn3");
+
 let userData = [
   {
     info: { name: "", mail: "", phone: "" },
     plan: 0,
     planName: "",
     duration: "",
+    addOnsNames: ["Online  service", "Large storage", "Customizable Profile"],
     addOns: [],
-    addOnsPrice: [],
+    addOnsPrice: [1, 2, 2],
   },
 ];
 let selected = 0;
@@ -17,6 +19,9 @@ btn1.addEventListener("click", (e) => {
   btn1.classList.add("selected");
   btn2.classList.remove("selected");
   btn3.classList.remove("selected");
+  document.querySelectorAll(".pageTwoBtn").forEach((element) => {
+    element.classList.remove("invalid");
+  });
   selected = 1;
 });
 
@@ -26,6 +31,9 @@ btn2.addEventListener("click", (e) => {
   btn1.classList.remove("selected");
   btn3.classList.remove("selected");
   selected = 2;
+  document.querySelectorAll(".pageTwoBtn").forEach((element) => {
+    element.classList.remove("invalid");
+  });
 });
 
 btn3.addEventListener("click", (e) => {
@@ -34,6 +42,9 @@ btn3.addEventListener("click", (e) => {
   btn2.classList.remove("selected");
   btn1.classList.remove("selected");
   selected = 3;
+  document.querySelectorAll(".pageTwoBtn").forEach((element) => {
+    element.classList.remove("invalid");
+  });
 });
 
 const checkbox = document.querySelectorAll(".threeCheck");
@@ -69,7 +80,7 @@ function previousPage() {
   currentPage--;
   document.getElementById(`${currentPage}`).classList.remove("hide");
   document.getElementById(`step${currentPage}`).classList.add(`active`);
-  console.log(currentPage);
+  userData[0].addOns = [];
 }
 const frontBtn = document.querySelectorAll(".firstBtn");
 const backBtn = document.querySelectorAll(".backButton");
@@ -130,8 +141,7 @@ frontBtn.forEach((element) => {
         nextPage();
       }
     } else if (e.target.parentElement.parentElement.id == "2") {
-      selectPlan();
-      nextPage();
+      if (selectPlan()) nextPage();
     } else if (e.target.parentElement.parentElement.id == "3") {
       addOns();
       nextPage();
@@ -144,6 +154,7 @@ frontBtn.forEach((element) => {
 backBtn.forEach((element) => {
   element.addEventListener("click", (e) => {
     e.preventDefault();
+
     previousPage();
   });
 });
@@ -202,6 +213,12 @@ document.querySelector(".email").addEventListener("input", (e) => {
   }
 });
 function selectPlan() {
+  if (selected == 0) {
+    document.querySelectorAll(".pageTwoBtn").forEach((element) => {
+      element.classList.add("invalid");
+    });
+    return 0;
+  }
   if (selected == 1) {
     userData[0].planName = "Arcade";
     userData[0].plan = 9;
@@ -212,64 +229,110 @@ function selectPlan() {
     userData[0].planName = "Pro";
     userData[0].plan = 15;
   }
-  if (document.querySelector(".threeCheck").checked) {
-    userData[0].plan *= 1;
-    userData[0].duration = "Monthly";
-  } else {
+  if (document.querySelector(".checkbox").checked) {
     userData[0].plan *= 10;
     userData[0].duration = "Yearly";
-    userData[0].addOnsPrice.map((element) => {
-      element = element * 10;
+    userData[0].addOnsPrice.forEach((element, index) => {
+      userData[0].addOnsPrice[index] *= 10;
     });
+  } else {
+    userData[0].plan *= 1;
+    userData[0].duration = "Monthly";
   }
+  return 1;
 }
 
 function addOns() {
   if (document.querySelector(".check1").checked) {
-    userData[0].addOns.push("Online service");
-    userData[0].addOnsPrice.push(1);
+    userData[0].addOns[0] = true;
+  } else {
+    userData[0].addOns[0] = false;
   }
   if (document.querySelector(".check2").checked) {
-    userData[0].addOns.push("Large storage");
-    userData[0].addOnsPrice.push(2);
+    userData[0].addOns[1] = true;
+  } else {
+    userData[0].addOns[1] = false;
   }
   if (document.querySelector(".check3").checked) {
-    userData[0].addOns.push("Customizable Profile");
-    userData[0].addOnsPrice.push(1);
+    userData[0].addOns[2] = true;
+  } else {
+    userData[0].addOns[2] = false;
   }
 }
 function finalize() {
+  let finalPrice = 0;
   document.querySelector(
     ".finalHead"
   ).innerHTML = `${userData[0].planName} (${userData[0].duration}) `;
   document.querySelector(".finalPrice").innerHTML = `$${userData[0].plan}${
-    userData[0].duration == "monthly" ? "/yr" : "/mo"
+    userData[0].duration == "Yearly" ? "/yr" : "/mo"
   }`;
-  userData[0].addOns.forEach((element, index) => {
-    const html = `
+  document.querySelector(".bottomFinal").innerHTML = "";
+  userData[0].addOnsNames.forEach((element, index) => {
+    if (userData[0].addOns[index]) {
+      const html = `
     <div class="firstLine">
       <p class="firstLineText">${element}</p>
       <p class="firstLineText lastPrice">+$${userData[0].addOnsPrice[index]}${
-      userData[0].duration == "monthly" ? "/yr" : "/mo"
-    }</p>
+        userData[0].duration == "Yearly" ? "/yr" : "/mo"
+      }</p>
   </div>`;
-
-    document
-      .querySelector(".bottomFinal")
-      .insertAdjacentHTML("beforeend", html);
+      finalPrice += userData[0].addOnsPrice[index];
+      document
+        .querySelector(".bottomFinal")
+        .insertAdjacentHTML("beforeend", html);
+    }
   });
   document.querySelector(".last").innerHTML = `Total (per ${
-    userData[0].duration == "yearly" ? "year" : "month"
+    userData[0].duration == "Yearly" ? "year" : "month"
   })`;
-  let finalPrice = 0;
-  addOnsPrice.forEach((element) => {
-    finalPrice += element;
-  });
   finalPrice += userData[0].plan;
-  document.querySelector(".finalRate").innerHTML = `$${finalPrice}/${
-    userData[0].duration == "monthly" ? "/yr" : "/mo"
+  document.querySelector(".finalRate").innerHTML = `$${finalPrice}${
+    userData[0].duration == "Yearly" ? "/yr" : "/mo"
   }`;
 }
 document.addEventListener("onload", () => {
   phoneNumberFormatterAndValidator();
+});
+
+document.querySelector(".checkbox").addEventListener("click", (e) => {
+  if (e.target.checked == true) {
+    document.querySelector(".circle").style.right = 0;
+    document.querySelector(".circle").style.left = "90%";
+    document.querySelector(".circle").style.transform = "translateX(-90%)";
+    document
+      .querySelector(".monthly")
+      .classList.remove("currentlySelectedPlan");
+    document.querySelector(".yearly").classList.add("currentlySelectedPlan");
+    document.querySelectorAll(".yearlyMessage").forEach((element) => {
+      element.classList.remove("hidden");
+      element.classList.add("hiddenNot");
+    });
+  } else {
+    document.querySelector(".circle").style.right = "90%";
+    document.querySelector(".circle").style.transform = "translateX(10%)";
+    document.querySelector(".circle").style.left = 0;
+    document.querySelector(".monthly").classList.add("currentlySelectedPlan");
+    document.querySelector(".yearly").classList.remove("currentlySelectedPlan");
+    document.querySelectorAll(".yearlyMessage").forEach((element) => {
+      element.classList.add("hidden");
+      element.classList.remove("hiddenNot");
+    });
+  }
+});
+document.querySelector(".link").addEventListener("click", (e) => {
+  e.preventDefault();
+  previousPage();
+  previousPage();
+  userData[0].planName = "";
+  selected = 0;
+  btn1.classList.remove("selected");
+  btn2.classList.remove("selected");
+  btn3.classList.remove("selected");
+});
+//IntersectionObserver help
+document.addEventListener("DOMContentLoaded", () => {
+  if (screen.width <= 375) {
+    document.querySelector(".back").style.display = "none";
+  }
 });
