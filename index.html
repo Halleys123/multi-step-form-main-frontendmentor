@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Multi-step form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <!-- Sidebar start -->
+      <aside>
+        <div class="element" id="one">
+          <div class="stepNumber active" id="step1">1</div>
+          <div class="content">
+            <p class="step">STEP 1</p>
+            <p class="stepDetail">YOUR INFO</p>
+          </div>
+        </div>
+        <div class="element">
+          <div class="stepNumber" id="step2">2</div>
+          <div class="content">
+            <p class="step">STEP 2</p>
+            <p class="stepDetail">SELECT PLAN</p>
+          </div>
+        </div>
+        <div class="element" id="three">
+          <div class="stepNumber step3" id="step3">3</div>
+          <div class="content">
+            <p class="step">STEP 3</p>
+            <p class="stepDetail">ADD-ONS</p>
+          </div>
+        </div>
+        <div class="element" id="four">
+          <div class="stepNumber" id="step4">4</div>
+          <div class="content">
+            <p class="step">STEP 4</p>
+            <p class="stepDetail">SUMMARY</p>
+          </div>
+        </div>
+      </aside>
+      <!-- Sidebar end -->
+
+      <!-- Step 1 start -->
+      <div class="loginForm">
+        <div class="divider" id="1">
+          <div class="firstStep loginSteps">
+            <header>Personal info</header>
+            <p class="detail">
+              Please provide your name, email address, and phone number.
+            </p>
+            <form method="post" autocomplete="on">
+              <div class="formElements">
+                <div class="error">
+                  <label for="name">Name</label>
+                  <div class="test">
+                    <span class="errorMessage one3">Please enter a Name</span>
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Vanessa Mint"
+                  aria-required="true"
+                  class="name"
+                />
+              </div>
+              <div class="formElements">
+                <div class="error">
+                  <label for="number">Email Address</label>
+                  <div class="test">
+                    <span class="errorMessage one1"
+                      >Please enter a valid Email</span
+                    >
+                  </div>
+                </div>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="abc@gmail.com"
+                  aria-required="true"
+                  class="email"
+                />
+              </div>
+              <div class="formElements">
+                <div class="error">
+                  <label for="number">Phone Number</label>
+                  <div class="test">
+                    <span class="errorMessage one2"
+                      >Please enter a valid Number</span
+                    >
+                  </div>
+                </div>
+                <input
+                  type="tel"
+                  pattern="[0-9]{2}-[0-9]{5}-[0-9]{5}"
+                  name="number"
+                  placeholder="01-12335-12345"
+                  aria-required="true"
+                  class="phoneNumber"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="back">
+            <button class="backButton forPageone">Go Back</button>
+            <input
+              type="button"
+              value="Next Step"
+              class="firstBtn forPageOne"
+            />
+          </div>
+        </div>
+        <!-- Step 1 end -->
+
+        <!-- Step 2 start -->
+        <div class="divider secondStep hide" id="2">
+          <div class="secondStep loginSteps">
+            <header>Select your plan</header>
+            <p class="detail">
+              You have the option of monthly or yearly billing.
+            </p>
+            <div class="pageTwo">
+              <button class="pageTwoBtn pageTwoBtn1">
+                <img src="assets/images/icon-arcade.svg" />
+                <div class="pageTwoDetails">
+                  <p class="pageTwoButtonTextMain">Arcade</p>
+                  <p class="pageTwoButtonPrice">$9/mo</p>
+                </div>
+              </button>
+              <button class="pageTwoBtn pageTwoBtn2">
+                <img src="assets/images/icon-advanced.svg" />
+                <div class="pageTwoDetails">
+                  <p class="pageTwoButtonTextMain">Advanced</p>
+                  <p class="pageTwoButtonPrice">$12/mo</p>
+                </div>
+              </button>
+              <button class="pageTwoBtn pageTwoBtn3">
+                <img src="assets/images/icon-pro.svg" />
+                <div class="pageTwoDetails">
+                  <p class="pageTwoButtonTextMain">Pro</p>
+                  <p class="pageTwoButtonPrice">$15/mo</p>
+                </div>
+              </button>
+            </div>
+            <div class="plan">
+              <span class="time currentlySelectedPlan">Monthly</span>
+              <input type="checkbox" id="input" />
+              <label for="input" id="label"></label>
+              <span class="time"> Yearly</span>
+            </div>
+          </div>
+
+          <div class="back">
+            <button class="backButton">Go Back</button>
+            <input
+              type="button"
+              value="Next Step"
+              class="firstBtn forPageTwo"
+            />
+          </div>
+        </div>
+        <!-- Step 2 end -->
+
+        <!-- Step 3 start -->
+        <div class="divider hide" id="3">
+          <div class="thirdStep loginSteps">
+            <header>Pick add-ons</header>
+            <p class="detail">Add-ons help enhance your gaming experience.</p>
+            <div class="pageThree">
+              <div class="firstElementThirdPage">
+                <div class="elementThirdpage">
+                  <input
+                    type="checkbox"
+                    class="elementOneCheck threeCheck check1"
+                  />
+                  <div class="elementDetails">
+                    <p class="thirdPageElementHead">Online service</p>
+                    <p class="thirdPageElementDetail">
+                      Access to multiplayer games
+                    </p>
+                  </div>
+                </div>
+                <p class="price">+$1/mo</p>
+              </div>
+              <div class="firstElementThirdPage">
+                <div class="elementThirdpage">
+                  <input
+                    type="checkbox"
+                    class="elementOneCheck threeCheck check2"
+                  />
+                  <div class="elementDetails">
+                    <p class="thirdPageElementHead">Larger storage</p>
+                    <p class="thirdPageElementDetail">
+                      Extra 1TB of cloud save
+                    </p>
+                  </div>
+                </div>
+                <p class="price">+$2/mo</p>
+              </div>
+              <div class="firstElementThirdPage">
+                <div class="elementThirdpage">
+                  <input
+                    type="checkbox"
+                    class="elementOneCheck threeCheck check3"
+                  />
+                  <div class="elementDetails">
+                    <p class="thirdPageElementHead">Customizable profile</p>
+                    <p class="thirdPageElementDetail">
+                      <!-- Access to multiplayer games -->
+                      Custom theme on your profile
+                    </p>
+                  </div>
+                </div>
+                <p class="price">+$2/mo</p>
+              </div>
+            </div>
+          </div>
+          <div class="back">
+            <button class="backButton">Go Back</button>
+            <input
+              type="button"
+              value="Next Step"
+              class="firstBtn forPageTwo"
+            />
+          </div>
+        </div>
+        <!-- Step 3 end -->
+
+        <!-- Step 4 start -->
+        <div class="divider hide" id="4">
+          <div class="thirdStep loginSteps">
+            <header>Finishing up</header>
+            <p class="detail">
+              Double check everything looks OK before confirming
+            </p>
+            <div class="finalizing">
+              <div class="topFinal">
+                <p class="item finalHead">Aracade (Monthly/yearly)</p>
+                <p class="item finalPrice">$9/mo</p>
+
+                <a class="item link"> Change</a>
+              </div>
+
+              <div class="bottomFinal"></div>
+            </div>
+            <div class="firstLine finalizing lastRate">
+              <p class="firstlineText last">Total (per month)</p>
+              <p class="firstlineText finalRate">+$12/mo</p>
+            </div>
+          </div>
+          <div class="back">
+            <button class="backButton">Go Back</button>
+            <input type="button" value="Confirm" class="firstBtn confirm" />
+          </div>
+        </div>
+        <!-- Step 4 end -->
+
+        <!-- Step 5 start -->
+        <div class="divider hide thank" id="5">
+          <div class="thanks">
+            <img src="./assets/images/icon-thank-you.svg" alt="" />
+            <p class="thankYou">Thank you!</p>
+            <p class="thanksMessage">
+              Thanks for confirming your subscription! We hope you have fun
+              using our platform. If you ever need support, please feel free to
+              email us at support@loremgaming.com
+            </p>
+          </div>
+        </div>
+        <!-- Step 5 end -->
+      </div>
+    </main>
+  </body>
+  <script src="script.js"></script>
+</html>
