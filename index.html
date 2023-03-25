@@ -42,7 +42,7 @@
             <p class="stepDetail">YOUR INFO</p>
           </div>
         </div>
-        <div class="element">
+        <div class="element" id="two">
           <div class="stepNumber" id="step2">2</div>
           <div class="content">
             <p class="step">STEP 2</p>
@@ -74,7 +74,7 @@
             <p class="detail">
               Please provide your name, email address, and phone number.
             </p>
-            <form method="post" autocomplete="on">
+            <form method="post" autocomplete="off">
               <div class="formElements">
                 <div class="error">
                   <label for="name">Name</label>
@@ -291,7 +291,7 @@
 
         <!-- Step 5 start -->
         <div class="divider hide thank" id="5">
-          <div class="thanks">
+          <div class="thanks loginSteps">
             <img src="./assets/images/icon-thank-you.svg" alt="" />
             <p class="thankYou">Thank you!</p>
             <p class="thanksMessage">
@@ -303,6 +303,10 @@
         </div>
         <!-- Step 5 end -->
       </div>
+      <!-- <div class="back special hide">
+        <button class="backButton forPageone">Go Back</button>
+        <input type="button" value="Next Step" class="firstBtn forPageOne" />
+      </div> -->
     </main>
   </body>
   <script src="script.js"></script>

@@ -32,20 +32,36 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+#### Desktop Version Images -
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
+##### Page 1
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
+![Page 1 - Unfilled](./screenshots/Desktop%20Page%201%20-%20Unfilled.png)
+![Page 1 - Filled - Wrong](./screenshots/Desktop%20-%20Step%201%20-%20Wrong%20Filled.png)
+![Page 1 - Filled - Correct](./screenshots/Desktop%20-%20Step%201%20-%20Right%20Filling.png)
+![Page 1 - Hover](./screenshots/Desktop%20-%20Step%201%20-%20Next%20Step%20Hover.png)
 
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
+#### Page 2
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Page 2 - Unfilled - Hovering](./screenshots/Desktop%20-%20Step%202%20-%20Mouse%20Hover%20Over%20Icon.png)
+![Page 2 - Next without Slection](./screenshots/Desktop%20-%20Step%202%20-%20Click%20next%20without%20selecting%20any%20option.png)
+![Page 2 - Filled](./screenshots/Desktop%20-%20Step%202%20-%20Selecting%20One%20option.png)
+![Page 2 - yearly](./screenshots/Desktop%20-%20Step%202%20-%20Yearly.png)
+
+#### Page 3
+
+![Page 3 - Selection](./screenshots/Desktop%20-%20Step%203%20-%20Selection.png)
+
+#### Page 4
+
+![Page 4 - Summary - Monthly](./screenshots/Desktop%20-%20Step%204%20-%20Finalizing%20-%20Monthly.png)
+![Page 4 - Summary - Yearly](./screenshots/Desktop%20-%20Step%204%20-%20Finalizing%20-%20Yearly.png)
+![Page 4 - Summary - Thanks](./screenshots/Desktop%20-%20Step%204%20-%20Thanks.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub](https://your-solution-url.com)
+- Live Site URL: [Netlify](https://your-live-site-url.com)
 
 ## My process
 
@@ -71,6 +87,8 @@ Some of the few things I learnt and revised are:
 - Javascript Event Listeners - I used event listeners to make the form dynamic. I used event listeners to change the content of the form.
 - Using multiple classes for special selection of elements - I used multiple classes to select the elements that I wanted to change.
 - Using the `:checked` pseudo-class - I used the `:checked` pseudo-class to select the checked radio buttons.
+- Learnt a new way of using relative postioning
+- Learnt that tranform and absolute positioning can't be used simontaneously as tranform creates a new coordinte system which obstructs porper positioning of elements.
 
 ### Continued development
 
