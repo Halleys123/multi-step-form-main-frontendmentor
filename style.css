@@ -12,6 +12,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: hsl(217, 100%, 97%);
   height: 100vh;
 }
 main {
@@ -21,6 +22,7 @@ main {
   display: flex;
   justify-content: space-between;
   box-shadow: 5px 5px 2rem 1px hsla(229, 57%, 11%, 0.123);
+  background-color: white;
   border-radius: 1.2rem;
 }
 /* ------------------------------------------- */
@@ -565,6 +567,7 @@ input:invalid {
     overflow: hidden;
     align-items: center;
     box-shadow: 0px 0px 0px 0px;
+    background-color: hsl(217, 100%, 97%);
   }
   aside {
     background-image: url("./assets/images/bg-sidebar-mobile.svg");
@@ -580,11 +583,13 @@ input:invalid {
     padding-top: 2rem;
   }
   body {
-    background-color: hsl(228, 100%, 95%);
+    background-color: hsl(217, 100%, 97%);
+
     display: inline;
     /* position: absolute; */
     /* overflow: hidden; */
   }
+
   .stepNumber {
     padding: 0%;
   }
