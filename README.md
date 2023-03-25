@@ -10,9 +10,7 @@
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -41,27 +39,31 @@ Users should be able to:
 ![Page 1 - Filled - Correct](./screenshots/Desktop%20-%20Step%201%20-%20Right%20Filling.png)
 ![Page 1 - Hover](./screenshots/Desktop%20-%20Step%201%20-%20Next%20Step%20Hover.png)
 
-#### Page 2
+##### Page 2
 
 ![Page 2 - Unfilled - Hovering](./screenshots/Desktop%20-%20Step%202%20-%20Mouse%20Hover%20Over%20Icon.png)
 ![Page 2 - Next without Slection](./screenshots/Desktop%20-%20Step%202%20-%20Click%20next%20without%20selecting%20any%20option.png)
 ![Page 2 - Filled](./screenshots/Desktop%20-%20Step%202%20-%20Selecting%20One%20option.png)
 ![Page 2 - yearly](./screenshots/Desktop%20-%20Step%202%20-%20Yearly.png)
 
-#### Page 3
+##### Page 3
 
 ![Page 3 - Selection](./screenshots/Desktop%20-%20Step%203%20-%20Selection.png)
 
-#### Page 4
+##### Page 4
 
 ![Page 4 - Summary - Monthly](./screenshots/Desktop%20-%20Step%204%20-%20Finalizing%20-%20Monthly.png)
 ![Page 4 - Summary - Yearly](./screenshots/Desktop%20-%20Step%204%20-%20Finalizing%20-%20Yearly.png)
 ![Page 4 - Summary - Thanks](./screenshots/Desktop%20-%20Step%204%20-%20Thanks.png)
 
+#### Mobile Version Images -
+
+To Be Added
+
 ### Links
 
-- Solution URL: [GitHub](https://your-solution-url.com)
-- Live Site URL: [Netlify](https://your-live-site-url.com)
+- Solution URL: [GitHub](https://github.com/Halleys123/multi-step-form-main-frontendmentor)
+- Live Site URL: [Netlify](https://thunderous-dusk-7b33e4.netlify.app/)
 
 ## My process
 
@@ -94,23 +96,9 @@ Some of the few things I learnt and revised are:
 
 I would like to change the formatting of javascript code and make it more readable. I would also like to make the code more efficient and reduce the number of lines of code.
 
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Frontend Mentor - [@Halleys123](https://www.frontendmentor.io/profile/Halleys123)
+- Twitter - [@Halleys123](https://twitter.com/ArnavChhabra3)
+- LinkedIn - [Arnav C.](https://www.linkedin.com/in/arnav-c-51072316b/)
+- GitHub - [Halleys123](https://github.com/Halleys123)
